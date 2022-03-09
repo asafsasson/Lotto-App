@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, ScrollView, SafeAreaView, Image, Pressable } from 'react-native';
+import React, { useState } from 'react'
+import MainScreen from './components/MainScreen';
+import { I18nManager } from 'react-native';
 
-export default function App() {
+const App = () => {
+  try {
+    I18nManager.allowRTL(false);
+  }
+  catch (e) {
+    console.log(e);
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <MainScreen></MainScreen>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
+
+
+
+
+
